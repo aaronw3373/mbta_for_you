@@ -9,27 +9,19 @@ class Line
     @stations = []
   end
 
-  def add_station(station_name)
-    @stations.push(Station.new(station_name))
-    # @stations << Station.new(station_name)
-
-    # if we're adding park st station then get the index of park st
-    # and save it for later calculations
-    if(station_name == 'park')
-      @park_station_index = @stations.length - 1
-    end
-
+  def add_station(station_name, num)
+    @stations.push(Station.new(station_name, num))
   end
 
-  def find_station_by_name(sname)
-    stations.select { |station| station.name == sname}[0]
-  end
+  # def find_station_by_name(sname)
+  #   stations.select { |station| station.name == sname}[0]
+  # end
 
-  def number_of_stops_to_park(station_name)
-  
-    stop_num = @stations.index do |station|
-      station.name == station_name
-    end
-    (stop_num - @park_station_index).abs
-  end
+  # def number_of_stops_to_park(station_name)
+
+  #   stop_num = @stations.index do |station|
+  #     station.name == station_name
+  #   end
+  #   (stop_num - @park_station_index).abs
+  # end
 end
